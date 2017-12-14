@@ -1,0 +1,15 @@
+﻿
+// 通用 页面a锚点链接缓动效果：
+
+function tar() {
+    var s = $("a[href*='#']");
+    console.log(s);
+    s.each(function(){
+        $(this).on('click',function(){
+            $('html,body').animate({
+                scrollTop:$($.attr(this,'href')).offset().top
+            },500);
+            return false;
+        })
+    })
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slickjs插件淡入淡出轮播图</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<style>
+ul li{
+    list-style: none;
+    display: inline-block;
+}
+button {
+    overflow: visible;
+    box-shadow: 0 0 0 0 transparent;
+    text-transform: none;
+    cursor: pointer;
+    -webkit-appearance: button;
+
+}
+
+.slick-dots li{
+    width: 56px;
+    height: 56px;
+}
+.slick-dots li.slick-active button {
+    -webkit-transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+}
+
+.slick-dots li button {
+    line-height: 56px;
+    display: block;
+    width: 100%;
+    height: 56px;
+    -webkit-transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    opacity: .6;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover
+}
+
+.slick-dots li button:hover {
+    -webkit-transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    opacity: 1
+}
+.slick-dots li:nth-child(1) button {
+    background-image: url("img/1.jpg")
+}
+
+.slick-dots li:nth-child(2) button {
+    background-image: url("img/2.jpg")
+}
+
+.slick-dots li:nth-child(3) button {
+    background-image: url("img/3.jpg")
+}
+.slider-img img{
+width: 300px;
+height: 300px;
+
+}
+
+</style>
+</head>
+<body>
+    <div class="slider draggable slider-img"> 
+        <div>
+            <div class="image">
+                <img src="img/1.jpg"/>
+            </div>
+        </div> 
+        <div>
+            <div class="image">
+                <img src="img/2.jpg"/>
+            </div>
+        </div> 
+        <div>
+            <div class="image">
+                <img src="img/3.jpg"/>
+            </div>
+        </div> 
+    </div>
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script src="slick/slick.min.js"></script>
+<script>
+$(document).ready(function() { 
+  $('.draggable').slick({ 
+    dots: true, 
+    infinite: true, 
+    speed: 500, 
+    fade: true, 
+    slide: 'div', 
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 1000,
+    arrows:false
+
+  }); 
+}); 
+</script>
+</html>
