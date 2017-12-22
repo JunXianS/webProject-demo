@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>递归小demo</title>
+</head>
+<body>
+  
+</body>
+<script>
+/*加判断条件，防止形成死递归*/
+var i=0;
+//声明
+  function fn() {
+    i++;/*执行方式*/
+    console.log("从前有座山，山里有座庙，庙里有个老和尚在给小和尚讲故事，故事是：");
+    if (i<10) {/*执行条件*/
+    fn();
+    };
+  }
+//调用
+  fn();
+//求n个数的累加
+//getSum(1)=1
+//getSum(2)=2+1
+//getSum(3)=3+2+1
+//getSum(3)=3+getSum(2)
+//getSum(n)=n+getSum(n-1)
+function getSum (n) {
+  if (n===1) {
+    return 1;
+  }
+  var sum=n+getSum(n-1);
+  return sum;
+}
+console.log(getSum(3));
+//求n的阶乘
+//getJC(1)=1
+//getJC(2)=2*1
+//getJC(3)=3*2*1
+//getJC(3)=3*getSum(2)
+//getJC(n)=n*getSum(n-1)
+function getJC(n) {
+  if (n===1) {
+    return 1;
+  }
+  var jc=n*getSum(n-1);
+  return jc;
+}
+console.log(getSum(3));
+
+/*求Fibonacci的第n个数1 1 2 3 5 8 13 21...(Fibonacci数列)*/
+//2=1+1
+//getFib(3)=getFib(1)+getFib(2)
+//3=2+1
+//getFib(4)=getFib(2)+getFib(3)
+//getFib(n)=getFib(n-2)+getFib(n-1)
+function getFib(n) {
+  if (n===1||n===2) {
+    return 1;
+  }
+  var fib=getFib(n-2)+getFib(n-1);
+  return fib;
+}
+console.log(getFib(12));
+</script>
+
+</html>
