@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+    <title>分类</title>
+<style>
+/*公共样式*/
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    color: #333;
+    font-family: "MicroSoft YaHei","sans-serif";
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #333;
+}
+input,textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+}
+.clearfix::after,
+.clearfix::before{
+    content: ".";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.jd_topBar{
+    height: 45px;
+    background: url("images/header-bg.png") repeat-x;
+    background-size: 1px 44px;
+    border-bottom: 1px solid #e0e0e0;
+    position: absolute;
+    width: 100%;
+}
+.jd_topBar form{
+    width: 100%;
+    padding: 0 40px;
+}
+.jd_topBar form input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    margin-top: 7px;
+}
+[class^="icon_"]{
+    background: url("images/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+.jd_topBar [class^="icon_"]{
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    padding: 12px 10px;
+    top: 0;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+.jd_topBar .icon_back{
+    left: 0;
+    background-position: -20px 0;
+}
+.jd_topBar .icon_menu{
+    right: 0;
+    background-position: -60px 0;
+}
+
+/*滑动菜单样式*/
+html,body{
+    height: 100%;
+}
+
+.jd_category{
+    height: 100%;
+    padding-top: 45px;
+    overflow: hidden;
+}
+
+.jd_category_left{
+    width: 90px;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.jd_category_left ul{
+
+}
+.jd_category_left ul li{
+    height: 50px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #f3f4f6;
+    text-align: center;
+    line-height: 50px;
+}
+.jd_category_left ul li.now{
+    border-right: none;
+    background: #fff;
+}
+.jd_category_left ul li a{
+    display: block;
+}
+.jd_category_left ul li.now a{
+    color: #d8505c;
+}
+
+.jd_category_right{
+    overflow: hidden;
+    height: 100%;
+}
+.jd_category_right_con .banner{
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+.jd_category_right_con .banner img{
+    width: 100%;
+    display: block;
+}
+.jd_category_right_con .product_box{
+    padding: 0 10px;
+}
+.jd_category_right_con .product_box h3{
+    font-size: 12px;
+    line-height: 30px;
+}
+.jd_category_right_con .product_box ul li{
+    float: left;
+    width: 33.333%;
+}
+.jd_category_right_con .product_box ul li img{
+    width: 62px;
+    height: 62px;
+    display: block;
+    margin:  0 auto;
+}
+.jd_category_right_con .product_box ul li p{
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+    <!--满屏的页面-->
+    <!--顶部通栏-->
+    <header class="jd_topBar">
+        <a href="#" class="icon_back"></a>
+        <form action="#">
+            <input type="search" placeholder="分类提示"/>
+        </form>
+        <a href="#" class="icon_menu"></a>
+    </header>
+    <!--分类主体-->
+    <div class="jd_category">
+        <!--左侧菜单-->
+        <div class="jd_category_left">
+            <ul>
+                <li class=""><a href="javascript:;">热门推荐</a></li>
+                <li class="now"><a href="javascript:;">潮流女装</a></li>
+                <li class=""><a href="javascript:;">品牌男装</a></li>
+                <li class=""><a href="javascript:;">内衣配饰</a></li>
+                <li class=""><a href="javascript:;">家用电器</a></li>
+                <li class=""><a href="javascript:;">电脑办公</a></li>
+                <li class=""><a href="javascript:;">手机数码</a></li>
+                <li class=""><a href="javascript:;">母婴频道</a></li>
+                <li class=""><a href="javascript:;">图书</a></li>
+                <li class=""><a href="javascript:;">家居家纺</a></li>
+                <li class=""><a href="javascript:;">居家生活</a></li>
+                <li class=""><a href="javascript:;">家具建材</a></li>
+                <li class=""><a href="javascript:;">热门推荐</a></li>
+                <li class=""><a href="javascript:;">潮流女装</a></li>
+                <li class=""><a href="javascript:;">品牌男装</a></li>
+                <li class=""><a href="javascript:;">内衣配饰</a></li>
+                <li class=""><a href="javascript:;">家用电器</a></li>
+                <li class=""><a href="javascript:;">电脑办公</a></li>
+                <li class=""><a href="javascript:;">手机数码</a></li>
+                <li class=""><a href="javascript:;">母婴频道</a></li>
+                <li class=""><a href="javascript:;">图书</a></li>
+                <li class=""><a href="javascript:;">家居家纺</a></li>
+                <li class=""><a href="javascript:;">居家生活</a></li>
+                <li class=""><a href="javascript:;">家具建材</a></li>
+            </ul>
+        </div>
+        <!--右侧内容-->
+        <div class="jd_category_right">
+            <div class="jd_category_right_con">
+                <a href="#" class="banner"><img src="images/banner_1.png" alt=""/></a>
+                <div class="product_box">
+                    <h3>热门分类</h3>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="product_box">
+                    <h3>热门分类</h3>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/cp4.jpg" alt=""/>
+                                <p>产品001</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="category.js"></script>
+</body>
+</html>
