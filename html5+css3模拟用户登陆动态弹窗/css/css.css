@@ -1,0 +1,182 @@
+*,:before,:after{
+	box-sizing: border-box;
+	margin:0;
+	transition: 0.4s;
+}
+input,button{
+	border: none;
+}
+body{
+	background: #616161 url(../img/bg.jpg) center/cover no-repeat;
+	height: 100vh;
+	overflow: hidden;
+	color: #fff;
+}
+/*页面结构部分*/
+
+.open {
+    background: linear-gradient(-45deg, #f857a6, #ff5858);
+    height: 45px;
+    width: 150px;
+    padding: 10px 20px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.model{
+	height: 400px;
+	width: 650px;
+	margin: auto;
+	box-shadow:0 15px 35px rgba(0,0,0,0.4);
+	position:absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	transition: .4s, box-shadow .3s .4s;
+}
+
+.form, .invite{
+	background: rgba(71, 71, 71, 0.8);
+	width: 50%;
+	height: 100%;
+	padding: 25px;
+	position: absolute;
+	top: 0;
+}
+.invite{
+	/*background: linear-gradient(-45deg, #f857a6, #ff5858);*/
+	background: linear-gradient(-45deg, #2158d3 ,#f857a6);
+	left: 50%;
+}
+
+/*输入框样式*/
+input{
+	background: rgba(255, 255, 255, 0.15);
+	width: 100%;
+	padding: 8px;
+	margin: 15px 0;
+	border-radius: 3px;
+	font-size: 20px;
+	outline: none;
+	color: #fff;
+
+}
+/*注册按钮样式*/
+button{
+	background: linear-gradient(-45deg, #f857a6, #2158d3);
+	padding: 10px 20px;
+	border-radius: 21px;
+	outline: none;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	color: #FFF;
+  	font-size: 18px;
+  	overflow: hidden;
+}
+/*不谢谢我不喜欢存钱*/
+.nope{
+	background: #474747;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	padding: 10px 15px;
+	font-size: 12px;
+	text-align: center;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+/*关闭按钮*/
+.close{
+	width: 30px;
+	height: 30px;
+	background: #474747;
+	position: absolute;
+	top: -15px;
+	right:-15px;
+	cursor: pointer;
+	border: 3px solid #FFF;
+    border-radius: 50%;
+}
+.close:before, .close:after {
+    content: '';
+    background: #FFF;
+    height: 80%;
+    width: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.close:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+label {
+  color: #FB5781;
+}
+
+/*css效果部分*/
+/*鼠标经过nope按钮，按钮底边框添加突出阴影效果，并向左偏移60%*/
+.nope:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transform: translateX(-60%);
+}
+
+/*鼠标经过注册按钮时，光亮一闪效果实现：
+给按钮添加伪元素before
+背景rgba+高度100%+position定位，transform，skew45度，
+改变伪元素的left的位置，+transition过度从0秒过度3秒完成。
+*/
+button:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    width: 65px;
+    position: absolute;
+    top: 0; 
+    left: -100%; 
+    transform: skew(-45deg); 
+    transition: 0s;
+}
+button:hover:before {
+  left: 110%;
+  transition: .4s;
+}
+
+
+/*用于添加移除类名的方式隐藏模态框*/
+.model.hidden {
+  box-shadow: none;
+  transition: .4s, box-shadow 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+.model.hidden .form {
+  top: 100%;
+}
+.model.hidden .invite {
+  top: -100%;
+}
+
+/*active类名：设置为透明，visibility设置为显示*/
+.open.active {
+    opacity: 1;
+    visibility: visible;
+}
