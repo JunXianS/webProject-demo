@@ -5,4 +5,4 @@
 2，[js移动端左列菜单滑动](https://amyidol.github.io/webProject-demo/js移动端左列菜单滑动/category.html)<br/>
 3，[jQuery淡入淡出轮播图](https://amyidol.github.io/webProject-demo/jQuery淡入淡出轮播图/jQuery淡入淡出轮播图.html)<br/>
 4，[slickjs响应式淡入淡出轮播图](https://amyidol.github.io/webProject-demo/slickjs响应式淡入淡出轮播图/slick.html)<br/>
-5，[流程图css](https://amyidol.github.io/webProject-demo/流程图/流程图.html)<br/>
+5，[流程图css](https://amyidol.github.io/webProject-demo/流程图.html)<br/>
